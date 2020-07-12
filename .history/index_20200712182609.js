@@ -62,6 +62,6 @@ function calculatePayroll(something){
   return newMap.reduce((accum, num)=>{return accum + num})
 }
 
-function findEmployeeByFirstName(arr, employeeName) {
-  return arr.find(employee => employee.firstName === employeeName)
+function findEmployeeByFirstName(arr, employee) {
+  return arr.forEach(employee => employee.find(value => value.firstName === employeeName))
 }

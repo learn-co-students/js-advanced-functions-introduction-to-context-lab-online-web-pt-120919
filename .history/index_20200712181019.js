@@ -50,18 +50,6 @@ function wagesEarnedOnDate(workerObject, date) {
 }
 
 function allWagesFor(workerObj) {
-  let accum = 0
-  for (let i = 0; i < workerObj.timeInEvents.length; i++){
-    accum += (hoursWorkedOnDate(workerObj, workerObj.timeInEvents[i].date))
-  }
-  return accum * workerObj.payPerHour
-}
-
-function calculatePayroll(something){
-  let newMap =  something.map(person => allWagesFor(person))
-  return newMap.reduce((accum, num)=>{return accum + num})
-}
-
-function findEmployeeByFirstName(arr, employeeName) {
-  return arr.find(employee => employee.firstName === employeeName)
+  console.log(workerObj)
+  let accumulated = workerObj.
 }
