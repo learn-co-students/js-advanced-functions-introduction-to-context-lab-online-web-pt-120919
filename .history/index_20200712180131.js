@@ -39,29 +39,9 @@ function createTimeOutEvent(employee, time) {
 }
 
 function hoursWorkedOnDate(employeeObj, date) {
+  debugger
   let hourIn = employeeObj.timeInEvents.find(obj => obj.date === date).hour
   let hourOut = employeeObj.timeOutEvents.find(obj => obj.date === date).hour
-  return (hourOut - hourIn) / 100
-}
-
-function wagesEarnedOnDate(workerObject, date) {
-  let hours = hoursWorkedOnDate(workerObject, date)
-  return workerObject.payPerHour * hours
-}
-
-function allWagesFor(workerObj) {
-  let accum = 0
-  for (let i = 0; i < workerObj.timeInEvents.length; i++){
-    accum += (hoursWorkedOnDate(workerObj, workerObj.timeInEvents[i].date))
-  }
-  return accum * workerObj.payPerHour
-}
-
-function calculatePayroll(employeesObject){
-  let newMap =  employeesObject.map(person => allWagesFor(person))
-  return newMap.reduce((accum, num)=>{return accum + num})
-}
-
-function findEmployeeByFirstName(arr, employeeName) {
-  return arr.find(employee => employee.firstName === employeeName)
+  let result = hourOut - hourIn
+  console.log(result.slice(2))
 }

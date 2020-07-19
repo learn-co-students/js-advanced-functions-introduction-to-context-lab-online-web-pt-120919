@@ -57,8 +57,8 @@ function allWagesFor(workerObj) {
   return accum * workerObj.payPerHour
 }
 
-function calculatePayroll(employeesObject){
-  let newMap =  employeesObject.map(person => allWagesFor(person))
+function calculatePayroll(something){
+  let newMap =  something.map(person => allWagesFor(person))
   return newMap.reduce((accum, num)=>{return accum + num})
 }
 
